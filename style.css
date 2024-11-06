@@ -1,20 +1,16 @@
-
-/* Stílusok a vizuális kiemeléshez */
-#draggable {
-    width: 100px;
-    height: 100px;
-    background-color: #3498db;
-    color: white;
-    text-align: center;
-    line-height: 100px;
-    cursor: move;
-}
-#dropzone {
-    width: 200px;
-    height: 200px;
-    border: 2px dashed #7f8c8d;
+#flag-container {
     display: flex;
-    align-items: center;
     justify-content: center;
     margin-top: 20px;
+}
+
+#map-container {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+img {
+    max-width: 150px;
+    height: auto;
 }

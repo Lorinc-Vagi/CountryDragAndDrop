@@ -24,25 +24,39 @@ const countries=[
         "name":"Görögország",
         "flag":"https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Flag_of_Greece.svg/188px-Flag_of_Greece.svg.png",
         "map":"https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Map_Greece_expansion_1832-1947-en.svg/800px-Map_Greece_expansion_1832-1947-en.svg.png"
+    },
+    {
+        "name":"Anglia",
+        "flag":"https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Flag_of_the_United_Kingdom_%281-2%29.svg/188px-Flag_of_the_United_Kingdom_%281-2%29.svg.png",
+        "map":"https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/MODIS_-_Great_Britain_and_Northern_Ireland_-_2012-06-04_during_heat_wave_%28cropped%29.jpg/255px-MODIS_-_Great_Britain_and_Northern_Ireland_-_2012-06-04_during_heat_wave_%28cropped%29.jpg"
     }
 ]
+let rndFlg=Math.floor(Math.random() * countries.length);
 
-// A drag esemény kezelése
-document.getElementById("draggable").addEventListener("dragstart", function(event) {
-    event.dataTransfer.setData("text", event.target.id);
-});
 
-// A drop zóna felett tartás engedélyezése
-document.getElementById("dropzone").addEventListener("dragover", function(event) {
-    event.preventDefault();
-});
 
-// Az elemek dobásának kezelése
-document.getElementById("dropzone").addEventListener("drop", function(event) {
-    event.preventDefault();
-    // Az áthúzott elem ID-jének lekérése
-    var data = event.dataTransfer.getData("text");
-    var draggableElement = document.getElementById(data);
-    // Az áthúzott elemet hozzáadjuk a drop zónához
-    event.target.appendChild(draggableElement);
-});
+const mapContainer = document.getElementById("map-container");
+
+let rndMap1=Math.floor(Math.random() * countries.length);
+let rndMap2=Math.floor(Math.random() * countries.length);
+let rndMap3=Math.floor(Math.random() * countries.length);
+let rndMap4=Math.floor(Math.random() * countries.length);
+
+for (let i = 1; i < 5; i++) {
+    console.log(i);
+    
+    
+}
+// countries.forEach(country => {
+//     const mapImg = document.createElement("img");
+//     mapImg.src = country.map;
+//     mapImg.alt = `Térkép: ${country.name}`;
+//     mapContainer.appendChild(mapImg);
+// });
+
+// Az első ország zászlójának elhelyezése a flag-container-ben
+const flagContainer = document.getElementById("flag-container");
+const flagImg = document.createElement("img");
+flagImg.src = countries[rndFlg].flag;
+//flagImg.alt = `Zászló: ${countries[0].name}`;
+flagContainer.appendChild(flagImg);
