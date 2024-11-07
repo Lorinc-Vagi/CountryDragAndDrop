@@ -31,32 +31,86 @@ const countries=[
         "map":"https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/MODIS_-_Great_Britain_and_Northern_Ireland_-_2012-06-04_during_heat_wave_%28cropped%29.jpg/255px-MODIS_-_Great_Britain_and_Northern_Ireland_-_2012-06-04_during_heat_wave_%28cropped%29.jpg"
     }
 ]
-let rndFlg=Math.floor(Math.random() * countries.length);
+let jovalasz=Math.floor(Math.random() * countries.length); //A zászló id-ja amir rá kell húzni az országra
+let joValaszHelye=Math.floor(Math.random()*4);
+console.log("Jó válasz értéke "+ jovalasz+"|| És helye " + joValaszHelye);
 
 
 
 const mapContainer = document.getElementById("map-container");
 
-let rndMap1=Math.floor(Math.random() * countries.length);
-let rndMap2=Math.floor(Math.random() * countries.length);
-let rndMap3=Math.floor(Math.random() * countries.length);
-let rndMap4=Math.floor(Math.random() * countries.length);
+let rndMap1, rndMap2, rndMap3, rndMap4;
+let uniqueValues = new Set();
+uniqueValues.add(joValaszHelye)
 
-for (let i = 1; i < 5; i++) {
-    console.log(i);
-    
+function getUniqueRandomValue() {
+    let value;
+    do {
+        value = Math.floor(Math.random() * countries.length);
+    } while (uniqueValues.has(value)); // Ha a szám már létezik, új számot generálunk
+    uniqueValues.add(value); // Hozzáadjuk az új értéket a Set-hez
+    return value;
+}
+
+if (joValaszHelye == 0) {
+    rndMap1 = jovalasz;
+} else {
+    rndMap1 = getUniqueRandomValue();
+}
+
+if (joValaszHelye == 1) {
+    rndMap2 = jovalasz;
+} else {
+    rndMap2 = getUniqueRandomValue();
+}
+
+if (joValaszHelye == 2) {
+    rndMap3 = jovalasz;
+} else {
+    rndMap3 = getUniqueRandomValue();
+}
+
+if (joValaszHelye == 3) {
+    rndMap4 = jovalasz;
+} else {
+    rndMap4 = getUniqueRandomValue();
+}
+
+console.log(rndMap1, rndMap2, rndMap3, rndMap4);
+
+
+
+
+for (let index = 0; index < 4; index++) {
+
     
 }
-// countries.forEach(country => {
-//     const mapImg = document.createElement("img");
-//     mapImg.src = country.map;
-//     mapImg.alt = `Térkép: ${country.name}`;
-//     mapContainer.appendChild(mapImg);
-// });
+
+
+console.log(rndMap1);
+console.log(rndMap2);
+console.log(rndMap3);
+console.log(rndMap4);
+
+const mapImg1 = document.createElement("img");
+mapImg1.src = countries[rndMap1].map;
+mapContainer.appendChild(mapImg1);
+const mapImg2 = document.createElement("img");
+mapImg2.src = countries[rndMap2].map;
+mapContainer.appendChild(mapImg2);
+const mapImg3 = document.createElement("img");
+mapImg3.src = countries[rndMap3].map;
+mapContainer.appendChild(mapImg3);
+const mapImg4 = document.createElement("img");
+mapImg4.src = countries[rndMap4].map;
+mapContainer.appendChild(mapImg4);
+for (let i = 0; i < 4; i++) {    
+
+}
 
 // Az első ország zászlójának elhelyezése a flag-container-ben
 const flagContainer = document.getElementById("flag-container");
 const flagImg = document.createElement("img");
-flagImg.src = countries[rndFlg].flag;
+flagImg.src = countries[jovalasz].flag;
 //flagImg.alt = `Zászló: ${countries[0].name}`;
 flagContainer.appendChild(flagImg);
