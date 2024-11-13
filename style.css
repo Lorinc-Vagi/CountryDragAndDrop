@@ -1,3 +1,13 @@
+body{
+    background-color: bisque;
+}
+h1{
+    text-align: center;
+}
+h2{
+    text-align: center;
+}
+
 #flag-container {
     display: flex;
     justify-content: center;

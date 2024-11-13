@@ -8,12 +8,33 @@
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 </head>
 <body>
-<h1>Órszág játék</h1>
-<h2>Húzza rá a zászlót a hozzátartozó Ország térképéhez</h2>
-<div id="map-container"></div>
-<div id="flag-container"></div>
+    <audio src="./tada.mp3" id="tada"></audio>
+    <audio src="./err.mp3" id="err"></audio>
+    <audio src="./cheer.mp3" id="cheer"></audio>
+    <audio src="./tahiti2.mp3" id="tahiti"></audio>
 
-<h1 class="hejesseg"></h1>
-    <script src="script.js"></script>
+    <table>
+        <td><p id="joPontok">Jó pontok=0</p></td>
+        <td><p id="rosszPontok">Rossz pontok=0</p></td>
+        <td>
+            <div style="display: flex; align-items: center;">
+                <img src="" alt="" style="width: 70px;" id="face">
+                <p id="dutchPontok"></p>
+            </div>
+
+        </td>
+    </table>
+
+
+
+
+
+    <h1>Órszág játék</h1>
+    <h2>Húzza rá a zászlót a hozzátartozó Ország térképéhez</h2>
+    <div id="map-container"></div>
+    <div id="flag-container"></div>
+
+    <h1 class="hejesseg"></h1>
+        <script src="script.js"></script>
 </body>
 </html>
