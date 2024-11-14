@@ -21,6 +21,7 @@ h2{
 }
 
 img {
-    max-width: 150px;
+    /* max-width: 150px; */
+    max-height: 200px;
     height: auto;
 }

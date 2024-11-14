@@ -46,7 +46,13 @@ const countries = [
         "name":"Tahiti",
         "flag":"https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Flag_of_Tahiti.svg/375px-Flag_of_Tahiti.svg.png",
         "map":"https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Districts_de_Tahiti.png/375px-Districts_de_Tahiti.png"
-    }
+    },
+
+    //Gpt
+    
+
+
+    
 ];
 
 let jovalasz = Math.floor(Math.random() * countries.length); // A zászló indexe
